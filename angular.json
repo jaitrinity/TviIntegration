@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TviCP": {
+    "TviIntegration": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/TviCP",
+            "outputPath": "dist/TviIntegration",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,9 +23,28 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/vendor/bootstrap/css/bootstrap.min.css",
+              "src/assets/vendor/bootstrap/css/bootstrap.css",
+              "src/assets/vendor/font-awesome/css/font-awesome.min.css",
+              "src/assets/css/fontastic.css",
+              "src/assets/css/style.default.css",
+              "src/assets/css/custom.css",
+              "src/assets/data-table/dataTables.bootstrap4.min.css",
+              "src/assets/css/jquery-confirm.css",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/vendor/jquery/jquery.min.js",
+              "src/assets/vendor/popper.js/umd/popper.min.js",
+              "src/assets/vendor/bootstrap/js/bootstrap.min.js",
+              "src/assets/vendor/jquery.cookie/jquery.cookie.js",
+              "src/assets/vendor/chart.js/Chart.min.js",
+              "src/assets/vendor/jquery-validation/jquery.validate.min.js",
+              "src/assets/data-table/jquery.dataTables.min.js",
+              "src/assets/data-table/dataTables.bootstrap4.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -48,8 +67,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "4mb",
+                  "maximumError": "6mb"
                 }
               ]
             }
@@ -58,18 +77,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "TviCP:build"
+            "browserTarget": "TviIntegration:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "TviCP:build:production"
+              "browserTarget": "TviIntegration:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "TviCP:build"
+            "browserTarget": "TviIntegration:build"
           }
         },
         "test": {
@@ -103,7 +122,7 @@
         }
       }
     },
-    "TviCP-e2e": {
+    "TviIntegration-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +131,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "TviCP:serve"
+            "devServerTarget": "TviIntegration:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "TviCP:serve:production"
+              "devServerTarget": "TviIntegration:serve:production"
             }
           }
         },
@@ -132,5 +151,5 @@
       }
     }
   },
-  "defaultProject": "TviCP"
+  "defaultProject": "TviIntegration"
 }
